@@ -1,0 +1,906 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Advitya</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href=".\static\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap');
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+*{
+  /* box-sizing: border-box; */
+  padding: 0%;
+  margin: 0%;
+}
+body{
+
+  overflow-x: hidden;
+}
+#rt-tree{
+  position: relative;
+  width: 72vw;
+  /* bottom: 51vw; */
+  right: -28vw;
+  margin-top: -35vw !important;}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  padding: 27px;
+  background: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.2); */
+  z-index: 100;
+  /* color: black; */
+  font-family: Marcellus;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  /* width: 100%; */
+  height: 100%;
+  background: -o-linear-gradient(
+    left,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(transparent),
+    color-stop(rgba(255, 255, 255, 0.4)),
+    to(transparent)
+  );
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.header:hover::before {
+  left: 100%;
+}
+.logo {
+  color: #6E5A5A;
+  font-size: 2vw;
+  text-decoration: none;
+  font-weight: 900;
+  cursor: default;
+}
+.navbar a {
+  color: #6E5A5A;
+  font-size: 1.5vw;
+  text-decoration: none;
+  margin-left: 1vw;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  color: #6E5A5A;
+  font-weight: 600;
+  font-family: Marcellus SC;
+  padding: 1vw;
+  border-top: 2px solid transparent; /* Set a transparent top border initially */
+  border-bottom: 2px solid transparent;
+}
+/* .navbar a:hover {
+  color: #f00;
+} */
+.navbar a:hover {
+    color: #007BFF;  /* Set the text color on hover */
+    border-top-color: #007BFF; /* Set the top border color on hover */
+    border-bottom-color: #007BFF; /* Set the bottom border color on hover */
+}
+
+#menu-icon {
+  font-size: 36px;
+  color: #000000;
+  display: none;
+}
+/* BREAKPOINTS */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.25rem 4%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .logo{
+    font-size: 2.5vw;
+  }
+  .navbar a{
+    font-size: 2vw;
+  }
+}
+@media (max-width: 768px) {
+  .header{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+     width: 100% !important;
+  }
+  #menu-icon {
+    display: block;
+   
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 4%;
+    display: none;
+    /* font-size: 2; */
+    /* background-image: url(./static/images/contact-bg.png); */
+    padding-bottom: 10vw !important;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .logo{
+    font-size: 3.5vw;
+  }
+  .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+    font-size: 2vw;
+    color: #FFF !important;
+  }
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 295px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+  .nav-bg.active {
+    display: block;
+  }
+}
+/* navbar ends */
+.parallax{
+  position: absolute;
+  /* width: 100%; */
+}
+.bg-img{
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -38px;
+}
+#rt-tree{
+  position: relative;
+  width: 72vw;
+  /* bottom: 51vw; */
+  right: 0vw;
+  margin-top: -34vw !important;
+
+}
+#left-tree{
+  position: relative;
+  left: 0;
+  margin-top: -35vw;
+  width: 72vw;
+  /* filter: blur(5px); Set the blur effect */
+}
+#left-tree::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust the height of the border */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* Set the gradient for the blurred border */
+}
+#ad-tittle{
+  position: relative;
+  width: 50vw;
+  margin-top: -38vw;
+  top: 44vw;
+  left: 25vw;
+  z-index: 1;
+}
+.jungle-img{
+  position: relative;
+  width: 100%;
+  top: 72vw;
+
+}
+.info{
+  position: relative !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 7vw;
+}
+.info-tittle{
+  color: #FFF;
+  text-shadow: 0px 0px 40px #000;
+  font-family: Marcellus SC;
+  font-size: 7vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 9.7px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  z-index: 1;
+}
+.info-para{
+  color: #FFF;
+  text-shadow: 0px 0px 40px #000;
+  font-family: Marcellus SC;
+  font-size: 2vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 58vw;
+  margin-top: 2vw;
+
+}
+#info-abt-adt, #info-abt-adt-para{
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+#info-abt-adt{
+  margin-top: 2vw;
+}
+.water-bg{
+
+  width: 100%;
+  position: relative;
+  margin-top: -59vw;
+  z-index: -1;
+}
+#bottom-img{
+  width: 100% !important;
+  position: relative;
+  top: -69vw;
+  z-index: -1;
+}
+.carousel_wrapper {
+  position: relative;
+  width: 24vw;
+  margin: 100px auto 0 auto;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  top: -38vw;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+   /* add reverse transformation from the slides */
+  -webkit-animation: swirl 40s steps(10000, end) infinite;
+          animation: swirl 40s steps(10000, end) infinite; /* run `swirl` animation (defined at end of CSS) infitely, with animation lasting 40 seconds, and 10,000 steps between the FROM and TO values in the animation for a smooth rotation */
+}
+
+.slide {
+  position: absolute;
+  top: -8vw;
+  /* left: 10px; */
+  width: 55vw;
+  height: 15vw;
+}
+.slide img {
+  width: 18vw;
+  height: 12vw;
+  border: 3px inset rgba(47, 115, 201, 0.75);
+  -webkit-box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.9);
+          box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.9);
+}
+.slide.one {
+  -webkit-transform: rotateY(0deg) translateZ(1vw);
+          transform: rotateY(0deg) translateZ(1vw);
+}
+.slide.two {
+  -webkit-transform: rotateY(40deg) translateZ(1vw);
+          transform: rotateY(40deg) translateZ(1vw);
+}
+.slide.three {
+  -webkit-transform: rotateY(80deg) translateZ(1vw);
+          transform: rotateY(80deg) translateZ(1vw);
+}
+.slide.four {
+  -webkit-transform: rotateY(120deg) translateZ(1vw);
+          transform: rotateY(120deg) translateZ(1vw);
+}
+.slide.five {
+  -webkit-transform: rotateY(160deg) translateZ(1vw);
+          transform: rotateY(160deg) translateZ(1vw);
+}
+.slide.six {
+  -webkit-transform: rotateY(200deg) translateZ(1vw);
+          transform: rotateY(200deg) translateZ(1vw);
+}
+.slide.seven {
+  -webkit-transform: rotateY(240deg) translateZ(1vw);
+          transform: rotateY(240deg) translateZ(1vw);
+}
+.slide.eight {
+  -webkit-transform: rotateY(280deg) translateZ(1vw);
+          transform: rotateY(280deg) translateZ(1vw);
+}
+.slide.nine {
+  -webkit-transform: rotateY(320deg) translateZ(1vw);
+          transform: rotateY(320deg) translateZ(1vw);
+}
+
+/*
+CSS3 ANIMATION
+-------------------
+Simply rotates the carousel around the Y axis by using rotateY and starting at initial value, -360º, and going to final value 0º, then resetting.
+*/
+
+@-webkit-keyframes swirl {   
+  from {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes swirl {   
+  from {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+} 
+
+#bottom-img{
+  width: 100% !important;
+  position: relative;
+  top: -70vw;
+  z-index: -1;}
+.Theme-text{
+  color: #FFF;
+  text-shadow: 0px 0px 40px #000;
+  font-family: Marcellus SC;
+  font-size: 7vw !important;
+  font-style: normal;
+  font-weight: 400;
+  /* line-height: normal; */
+  /* letter-spacing: 9.7px; */
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  z-index: 1;
+  top: 5vw;
+text-align: center;
+position: relative;
+z-index: 8;
+
+}
+.theme-para{   color: #FFF;
+    text-shadow: 0px 0px 40px #000;
+    font-family: Marcellus SC;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    width: 60vw;
+    margin-top: 0.5vw;
+    position: relative;
+    top: 9vw;
+    text-align: center !important;
+    margin-left: 18vw;
+    z-index: 8;
+
+} 
+.theme-name{
+        top: 7vw;
+        font-size: 5vw !important;
+        z-index: 8;
+    }
+.Hightlights{
+    top: 13vw;
+}
+   
+.bottom-div{
+  padding-top: 50px !important;
+  background-color:#000000 !important;
+  font-family: Marcellus !important;
+  color: white;
+  padding-bottom: 30px !important;
+  margin-top: -15vw;
+
+}
+.follow-text{
+  font-family: Marcellus !important;
+  font-weight: 200!important;
+
+}
+.social-img > a > img{
+  /* width:2vw ; */
+  
+  -webkit-transition: -webkit-transform 0.3s ease-in-out !important;
+  
+  transition: -webkit-transform 0.3s ease-in-out !important;
+  
+  -o-transition: transform 0.3s ease-in-out !important;
+  
+  transition: transform 0.3s ease-in-out !important;
+  
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out !important;
+}
+
+
+.social-img > a > img:hover{
+-webkit-transform: scale(1.5) !important;
+    -ms-transform: scale(1.5) !important;
+        transform: scale(1.5) !important;
+-webkit-transition: -webkit-transform 0.3s ease-in-out !important;
+transition: -webkit-transform 0.3s ease-in-out !important;
+-o-transition: transform 0.3s ease-in-out !important;
+transition: transform 0.3s ease-in-out !important;
+transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out !important;
+}
+@media only screen and (max-width:600px){
+  .follow-text{
+    font-size: 3vw !important;
+
+  }
+  .social-img > a > img{
+    width: 3vw !important;
+  }
+}
+.contact-div{
+  padding-top: 10vw !important;
+background-image: url(./static/images/contact-bg.png);
+  margin-top: -3px !important;
+  margin-bottom: -3px !important;
+
+}
+.pra-dev-div{
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; 
+  -ms-flex-pack: distribute; 
+      justify-content: space-around; 
+  -ms-flex-wrap: wrap; 
+      flex-wrap: wrap; padding: 2vw ; 
+  gap: 20px !important; 
+  @media only screen and (max-width:880px){
+         -webkit-box-orient: vertical !important;
+         -webkit-box-direction: normal !important;
+             -ms-flex-direction: column !important;
+                 flex-direction: column !important;
+  }
+}  
+.contact-text{
+  font-size: 5vw ;
+  font-weight:200 ;
+  color: white;
+  text-align: center ;
+  font-family:  Marcellus;
+  background-size: cover;
+
+  
+}  
+.name-div{
+  color: white !important;
+  
+  font-family: Marcellus !important
+}  
+.name{
+  font-weight: 800;
+ 
+  font-family: Marcellus !important;
+  color: white;
+  
+} 
+.final-position{
+margin-bottom: 7vw!important;
+}
+@media only screen and (max-width:600px){
+    .contact-div{
+  padding-top: 18vw !important }
+.contact-text{
+font-size: 7vw !important;
+}
+}
+
+#rt-tree{
+  position: relative;
+  width: 72vw;
+  /* bottom: 51vw; */
+  right: -28vw;
+  margin-top: -35vw;}
+
+.events-major-div{
+background-image: url(./static/images/contact-bg.png);
+background-size: cover;
+padding: 3vw;
+margin-bottom: 3vw;
+
+
+}
+
+.event-div{
+display: -webkit-box !important;
+display: -ms-flexbox !important;
+display: flex !important;
+-ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+-webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
+gap: 3vw;
+margin: 4vw;
+margin-top: 8vw;
+}
+.event-div>img{
+width: 19vw !important;
+}
+.problem-div{
+background-image: url(./static/images/bottom-bg2.png);
+/* background-size: cover !important;  */
+position:relative;
+/* z-index: 6; */
+background-size: cover;
+width: 100%;
+z-index: -1;
+    background-size: cover;
+    width: 100%;
+    height: 100vw;
+    margin-top: -7vw;
+}
+.header{
+    height: 5vw;
+    border: none !important;
+}
+#logo{
+  width: 24vh;
+    /* padding-right: 3vw; */
+    position: relative;
+    left: -2vw;
+}
+@media only screen and (max-width:600px){
+  #abt-text{
+    padding-top: 8vw;
+  }
+  #menu-icon {
+    display: block;
+   
+  }
+  .info-tittle{
+    letter-spacing: 0;
+  }
+  .Hightlights {
+    top: 10vw !important;
+}
+.bottom-div{
+margin-top: -35vw;
+}
+.carousel_wrapper{ top: -56vw;}
+.slide {
+    /* position: absolute;
+    top: -8vw; */
+    /* left: 10px; */
+    width: 88vw;
+    height: 64vw;}
+.slide img {
+    width: 34vw;
+    height: 26vw;}
+ .info{margin-bottom: -10vw !important;}
+ #info-abt-adt{
+  margin-top: -5vw !important;
+ /* margin-bottom: 3vw !important; */
+
+ }
+ header{
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    /* align-self: unset; */
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+ }
+}
+@media only screen and (max-width:600px){
+    header{
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    /* align-self: unset; */
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+    width: 100% !important;
+    height: 10vw;
+    border: none !important;
+    }
+    #logo{
+    width: 12vh !important;
+    }
+    .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+    /* margin: 1vw; */
+    font-size: 3vw;
+    }
+   
+}
+
+.reg-div{
+ background-image: url(./static/images/bottom-bg2.png);
+color: rgb(255, 255, 255);
+font-family: Marcellus;
+text-align: center;
+/* margin-top: 4vw; */
+/* font-size: 1.5vw; */
+padding-top: 4vw;
+padding-bottom: 4vw;
+background-size: cover;
+}
+.reg-div > form{
+  /* text-align: center;
+  justify-content: center;
+  display: flex; */
+  position: absolute;
+  left: 25vw;
+}
+.reg-div > .form-container{
+  max-width: 50vw !important;
+  left: -6vw;
+  font-size: 160% !important;
+  position: relative;
+  margin-bottom: 30vw;
+}
+.reg-div > h3{
+  font-size: 2vw;
+  font-family:  Marcellus !important;
+  margin-top: 3vw;
+  @media only screen and (max-width: 1130px){
+    margin-top: 5vw !important;
+  }
+  @media only screen and (max-width: 813px){
+    margin-top: 8vw !important;
+    font-size: 3vw;
+  }
+  @media only screen and (max-width: 700px){
+    margin-top: 13vw !important;
+    font-size: 3vw;
+  }
+  @media only screen and (max-width: 540px){
+    margin-top: 15vw !important;
+    font-size: 4vw;
+  }
+  @media only screen and (max-width: 410px){
+    margin-top: 20vw !important;
+    font-size: 4vw;
+  }
+}
+.form-container {
+    /* text-align: center; */
+    /* width: 98%; */
+    max-width: 46vw;
+    margin-top: 4vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* position: relative; */
+    margin-left: 31vw !important;
+  
+  }
+  .text4{
+    border-width: 5px;
+    border-style: solid;
+    -o-border-image: 1;
+       border-image: 1;
+    border-radius: 20px !important;
+    padding: 1px 1px;
+    background: rgba(0, 0, 0, 0); /* Transparent black background */
+    width: 9vw;
+    height: 7vh;
+    margin-top: -19.8vw;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    z-index: 1;
+    top: 59vw;
+    position: relative;
+    left: -4vw;
+  
+  }
+  .register-front{
+  font-size: 1.7vw;
+  color: #7000FF !important;
+  font-weight: 800;
+  font-family:  Marcellus !important;
+
+  }
+  @media only screen and (max-width:600px){
+    .text4{
+        height: 6vw !important;
+    width: 15vw !important;
+    border: 5px solid black;
+    
+
+    }
+    .register-front{
+      font-size: 2.5vw !important;
+      position: relative;
+    top: -2vw;
+
+    }
+}
+.form-control{
+
+  background-color: transparent !important;
+}
+#sponsor-pg{
+  padding-bottom: 20vw;
+  height: 100% !important;
+}
+.card-img{
+  box-shadow: 0 4px 8px rgb(10, 10, 10);
+}
+.card-img-sp{
+width: 19vw !important;
+}
+@media only screen and (max-width:600px){
+  #sponsor-pg{
+  padding-bottom: 40vw;
+  height: 100% !important;
+}
+.theme-para {
+ 
+    font-size: 2.5vw;
+    
+    width: 79vw;
+    margin-top: 0.5vw;
+ 
+    top: 5vw;
+    text-align: center !important;
+    margin-left: 11vw;
+    z-index: 8;
+}
+.theme-name{
+  margin-top: 3vw;
+  padding-top: 3vw;
+}
+#abt-text {
+   
+    display: none !important;
+}
+.info-para{
+  font-size: 2vw;
+  font-weight: 400;
+  width: 60vw;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+}
+.text4 , .register-front, .card-img {
+  transition: transform 0.3s ease-in-out;
+  
+}
+.text4:hover, .register-front:hover, .card-img:hover{
+  transform: scale(1.5) !important;
+}
+#intrest{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+</style>
+<body>
+    <header class="header">
+        <a href="https://www.abhyudayiitb.org/" class="logo"><img id="logo"  src="../../static/images/logo.png" class="logo-img" alt="" /></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+           <a href="/">Home</a>
+        <a href="{% url 'event' %}"><b>Events</b></a>
+
+            <a href="https://competitions.abhyudayiitb.org/">Competitions</a>
+            <a href="https://forms.gle/kjLS1vsjS3UCsCyv6">Accomodations</a>
+           
+            <a href="{% url 'sponsor' %}">Sponsors</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+            <a href="{% url 'SocioTrivia' %}" ><b style="color: #C34FCE;">Register</b></a>
+
+        </nav>
+    </header>
+    <div class="nav-bg"></div>
+
+    {% block body %}{% endblock body %}
+    <div class="bottom-div" id="bottom-div-id">
+        <h5 class=" text-center follow-text" ><b> STUDENT ACITIVITY CENTRE , IITBOMBAY,</b></h5>
+        <h5 class=" text-center follow-text" ><b> POWAI MUMBAI - 400076</b></h5>
+        <h5 class=" text-center follow-text" ><b> Follow Us</b></h5>
+        <div class="d-flex " style="    gap: 20px;
+        justify-content: center;" >
+          <div class="social-img"><a href="https://instagram.com/iitbombay_abhyuday"><img src="./static/images/i.png" alt=""></a></div>
+          <div class="social-img"><a href="https://youtube.com/@AbhyudayIITBombay"><img src="./static/images/y.png" alt=""></a></div>
+          <div class="social-img"><a href="https://twitter.com/Abhyuday_IITB"><img src="./static/images/t.png" alt=""></a></div>
+          <div class="social-img"><a href="https://www.linkedin.com/company/abhyuday-iit-bombay/"><img src="./static/images/l.png" alt=""></a></div>
+          <div class="social-img"><a href="https://www.facebook.com/abhyuday.iitb/"><img src="./static/images/f.png" alt=""></a></div>
+         
+        </div>
+      </div>
+    <script src="./static/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofMQpmz8sCzIHoL4MZC7l3xMq8pg3Eql" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofMQpmz8sCzIHoL4MZC7l3xMq8pg3Eql" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+</body>
+</html>

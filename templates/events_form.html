@@ -1,0 +1,123 @@
+
+{% extends 'base.html' %} 
+{% load static %}
+{% load  socialaccount %}
+{%block body%}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" enctype="multipart/form-data" />
+<div class="reg-div"><h3 class="reg-text text-center" data-aos="fade-up" data-aos-duration="1000"><b>REGISTER</b></h3>
+<div class="form-container  "  data-aos="fade-up" data-aos-duration="1000">
+  <form action= "{% url 'Account'%}"method="post">
+    <div class="form-group ">
+      {% csrf_token %}
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+       
+        name="name"
+        placeholder="Enter your name"
+        style="color: white;"
+        required
+      />
+    </div>
+    <div class="form-group ">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+       
+        name="email"
+        id="Email"
+       
+        placeholder="Enter your email"
+        style="color: white;"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Phone no.</label>
+      <input
+        type="Phone"
+        class="form-control"
+       
+        name="phone"
+        id="phone"
+        placeholder="Enter your Contact"
+        style="color: white;"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">College</label>
+      <input
+        type="text"
+        class="form-control"
+       
+        name="college"
+        id="college"
+        placeholder="Enter your college "
+        style="color: white;"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">City</label>
+      <input
+        type="text"
+        class="form-control"
+        
+        name="City"
+        id="City"
+        placeholder="Enter your City "
+        style="color: white;"
+        required
+      />
+    </div>
+ 
+  
+    <div class="form-group" id="intrest">
+      <label>You would like to attain</label>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Conclaves" id="chkConclaves" name="profession">
+          <label class="form-check-label" for="chkConclaves">Conclaves</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Exhibitions" id="chkExhibitions" name="profession">
+          <label class="form-check-label" for="chkExhibitions">Exhibitions</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Events" id="chkEvents" name="profession">
+          <label class="form-check-label" for="chkEvents">Events</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Networking Arena" id="chkNetworkingArena" name="profession">
+          <label class="form-check-label" for="chkNetworkingArena">Networking Arena</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Speaker Sessions" id="chkSpeakerSessions" name="profession">
+          <label class="form-check-label" for="chkSpeakerSessions">Speaker Sessions</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Satyameva Jayate" id="chkSatyamevaJayate" name="profession">
+          <label class="form-check-label" for="chkSatyamevaJayate">Satyameva Jayate</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Campaigns" id="chkCampaigns" name="profession">
+          <label class="form-check-label" for="chkCampaigns">Campaigns</label>
+      </div>
+  </div>
+  
+    
+    <div class="submit"  >
+      <button class="btn btn-primary"   type="submit">Register</button>
+    </div>
+    <!-- <div class="submit"  >
+      <button class="btn btn-primary"   type="submit"><a href="{% provider_login_url 'google'%}?next=/event">Login using Google</a></button>
+    </div> -->
+ 
+  </form>
+</div>
+</div>
+
+{%endblock body%}

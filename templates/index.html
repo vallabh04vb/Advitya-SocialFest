@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+ 
+{% load static %}
+{% load socialaccount %}
+{%block body%}
+{% if messages %}
+{% for message in messages%}
+<div
+  class="alert alert-{{ messages.tags }} alert-dismissible fade show"
+  role="alert"
+  style="
+    margin: 0;
+    z-index: 999;
+ border: 10px solid #4D80FF;
+    
+    background: #C7D7FE;
+    
+    box-shadow: 0px 0px 50px 1px #444CE7;
+    font-family: Marcellus !important;
+    color: Black !important;
+    font-family: Marcellus !important;
+  "
+>
+  <strong>{{ message }}</strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {%endif%}
+{% comment %} 
+<button ><a href="{% url 'Triviareg' %}"  style="text-decoration: none;"><b class="register">Register</b></a></button> 
+<a href="{% url 'SocioTrivia' %}"><button id="details-bt">Events</button></a>
+
+<h1>Google Login</h1>
+<a href="{% provider_login_url 'google'%}?next=/">Login with Google</a>  {% endcomment %}
+
+<section class="parallax"> 
+    <img src="./static/images/ad-tittle.png" alt="" id="ad-tittle" data-aos="zoom-in-up" data-aos-duration="1000">
+    <div class="d-flex justify-content-center" >
+        <button class="text4"><a href="{% url 'SocioTrivia' %}"  style="text-decoration: none;"><b class="register-front">Register</b></a></button> 
+      </div>
+    <img src="./static/images/bg2.png" alt="" class="bg-img">
+  
+    <img src="./static/images/rt-tree.png" alt="" id="rt-tree" data-aos="zoom-in-up" data-aos-duration="1000">
+    <img src="./static/images/left-tree.png" alt="" id="left-tree" data-aos="zoom-in-up" data-aos-duration="1000">
+    <!-- <img src="./static/images/sun.png" alt="" id="left-tree"> -->
+   
+</section>
+<section class="abt-adt">
+    <img src="./static/images/jungle-img.png" alt="" class="jungle-img">
+    <div class="info" style="display: flex;
+    position: relative; flex-direction: column; margin: 7vw;">
+        <h3 class="info-tittle" data-aos="fade-right" data-aos-duration="1000" style="color: black;text-shadow: 0 0 10px white;">
+            About us
+        </h3>
+        <p class=" info-para" data-aos="fade-right" data-aos-duration="1000" style="color: black;text-shadow: 0 0 10px white;">
+          Abhyuday, the social body of IIT Bombay, is a non-profit organization dedicated to sensitizing people to adopt a socially conscious outlook. Since its inception in 2014, Abhyuday has grown into one of the country's largest student-run social bodies in just 10 years. We engage the youth in impactful campaigns, competitions, and events throughout the year, addressing diverse social issues such as education, healthcare, sustainability and more.
+
+
+        </p>
+        <h3 class="info-tittle" id="info-abt-adt" data-aos="fade-left" data-aos-duration="1000" style="text-shadow: 0 0 10px black;">
+            Advitya
+        </h3>
+        <p class="info-para" id="info-abt-adt-para" data-aos="fade-left" data-aos-duration="1000"  style="text-shadow: 0 0 10px black;">
+          Advitya is Abhyuday's annual Social Fest at IIT Bombay.
+          Rooted in the Sanskrit term meaning 'not two' or 'non-dual', Advitya literally means incomparable or unique. It serves as a profound metaphor for our collective commitment to social work and awareness. Through Advitya, we aim to break down barriers, celebrate diversity, and foster a sense of unity within our community. 
+          
+
+
+        </p>
+    </div>
+     <!-- <img src="./static/images/bottom-bg2.png" id="bottom-img2"alt=""> -->
+   
+    <!-- <h3 class="text-center Theme-text">
+        About Theme
+    </h3> -->
+    <!-- <h3 class="text-center Theme-text theme-name">
+        Serenade of Aspirations
+    </h3> -->
+    <!-- <p class="text-center theme-para">
+        This year's theme, "Serenade of Aspirations," explores groundbreaking ideas shaping society. Your expertise can enrich our event on January 20th-21st, shaping the minds of the next generation.
+  </p> -->
+  <!-- <h3 class="Theme-text Hightlights">Hightlights</h3> -->
+</section>
+<div class="problem-div">
+    <h3 class="text-center Theme-text" id="abt-text"data-aos="fade-up" data-aos-duration="1000" >
+        About Theme
+    </h3>
+    <h3 class="text-center Theme-text theme-name" data-aos="flip-left" data-aos-duration="1000">
+        Serenade of Aspirations
+    </h3>
+    <p class="text-center theme-para" data-aos="fade-up" data-aos-duration="1000">
+      This year's theme is a celebration of dreams and possibilities. Embracing the diverse melodies of aspirations, we celebrate the power of shared goals and the beauty that emerges when ambitions converge. It's not just about what we want for ourselves; it's also about using our dreams to make a difference in the world. 
+      "Serenade of Aspirations" is an opportunity to delve into the rich tapestry of ambitions that shape our community, fostering a space of positive change.
+  </p> 
+  <h3 class="Theme-text Hightlights" data-aos="fade-up" data-aos-duration="1000" >Hightlights</h3>
+</div>
+    <!-- <img src="./static/images/bottom-bg.png" id="bottom-img"alt=""> -->
+    <!-- -->
+    <!--  -->
+    <!-- -->
+  <!--  -->
+
+<div class="carousel_wrapper">
+  <div class="carousel">
+    <div class="slide one">
+      <img src="./static/images/sj.jpg" />
+    </div>
+    <div class="slide two">
+      <img src="./static/images/s2.jpg" />
+    </div>
+    <div class="slide three">
+      <img src="./static/images/c3.jpg" />
+    </div>
+    <div class="slide four">
+      <img src="./static/images/ad2.jpg" />
+    </div>
+    <div class="slide five">
+      <img src="./static/images/w1.jpg" />
+    </div>
+    <div class="slide six">
+      <img src="./static/images/w3.jpg" />
+    </div>
+    <div class="slide seven">
+      <img src="./static/images/e1.jpg" />
+    </div>
+    <div class="slide eight">
+      <img src="./static/images/s1.jpg" />
+    </div>
+    <div class="slide nine">
+      <img src="./static/images/ad.jpg" />
+    </div>
+  </div><!-- / .carousel -->
+</div><!-- / .carousel_wrapper -->
+
+ 
+{%endblock body%}
+
+
+

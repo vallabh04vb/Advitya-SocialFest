@@ -1,0 +1,12 @@
+ {% extends 'base.html' %}
+{% load static %}
+ {% block body %} 
+  <h2 style="color: red;">Initial Registration</h2>
+  <p>Debug: Template is rendering</p>
+  <form method="post" action="{% url 'dashboard' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Complete Registration</button>
+  </form> 
+
+{% endblock body %} 

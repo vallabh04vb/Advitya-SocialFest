@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+ 
+{% load static %}
+{% load socialaccount %}
+{%block body%}
+{% comment %} 
+<button ><a href="{% url 'Triviareg' %}"  style="text-decoration: none;"><b class="register">Register</b></a></button> 
+<a href="{% url 'SocioTrivia' %}"><button id="details-bt">Events</button></a>
+
+<h1>Google Login</h1>
+<a href="{% provider_login_url 'google'%}?next=/">Login with Google</a>  {% endcomment %}
+
+<section class="parallax"> 
+    <img src="./static/images/ad-tittle.png" alt="" id="ad-tittle">
+    <img src="./static/images/bg2.png" alt="" class="bg-img">
+  
+    <img src="./static/images/rt-tree.png" alt="" id="rt-tree">
+    <img src="./static/images/left-tree.png" alt="" id="left-tree">
+    <!-- <img src="./static/images/sun.png" alt="" id="left-tree"> -->
+   
+</section>
+<section class="abt-adt">
+    <img src="./static/images/jungle-img.png" alt="" class="jungle-img">
+    <div class="info" style="display: flex;
+    position: relative; flex-direction: column; margin: 7vw;">
+        <h3 class="info-tittle">
+            About us
+        </h3>
+        <p class=" info-para">
+            Abhyuday - The Social Body of IIT Bombay invites <Speaker Name> to be a guest speaker at Advitya, our flagship Social Fest, fostering social change and empowering individuals to impact society positively. In our Advitya, we wish to unite exceptional individuals who inspire, educate, and challenge conventional  
+
+
+        </p>
+        <h3 class="info-tittle" id="info-abt-adt">
+            Advitya
+        </h3>
+        <p class="info-para" id="info-abt-adt-para">
+            Advitya is held every year in January. Advitya aims to foster a sense of social responsibility among young people and create awareness about fundamental human rights. Over the years, we have hosted eminent personalities like John Abraham, Kailash Kher, Sonam Kapoor, Ira Singhal, Shraddha Kapoor, Aamir Khan, Himesh Madaan, and many more.
+
+
+        </p>
+    </div>
+</section>
+
+    <img src="./static/images/bottom-bg.png" id="bottom-img"alt="">
+    <h3 class="text-center Theme-text">
+        About Theme
+    </h3>
+    <h3 class="text-center Theme-text theme-name">
+        Serenade of Aspirations
+    </h3>
+    <p class="text-center theme-para">
+        This year's theme, "Serenade of Aspirations," explores groundbreaking ideas shaping society. Your expertise can enrich our event on January 20th-21st, shaping the minds of the next generation.
+  </p>
+  <h3 class="Theme-text Hightlights">Hightlights</h3>
+
+<div class="carousel_wrapper">
+  <div class="carousel">
+    <div class="slide one">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide two">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide three">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide four">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide five">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide six">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide seven">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide eight">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+    <div class="slide nine">
+      <img src="./static/images/jungle-img.png" />
+    </div>
+  </div><!-- / .carousel -->
+</div><!-- / .carousel_wrapper -->
+ 
+{%endblock body%}
+
+
+
